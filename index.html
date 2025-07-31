@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Digital Saran - Dubai-based travel blogger exploring the world's hidden gems and sharing authentic travel experiences.">
+  <title>Digital Saran | Travel Blog - Discover Hidden Gems Around the World</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  
+  <!-- Schema.org markup for Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Digital Saran Travel Blog",
+    "url": "https://digitalsaran.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://digitalsaran.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Digital Saran",
+    "url": "https://digitalsaran.com",
+    "sameAs": [
+      "https://instagram.com/digitalsaran",
+      "https://twitter.com/digitalsaran",
+      "https://facebook.com/digitalsaran"
+    ],
+    "jobTitle": "Travel Blogger",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Digital Saran Travel Blog"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Dubai",
+      "addressCountry": "United Arab Emirates"
+    }
+  }
+  </script>
+</head>
+<body class="font-sans text-gray-800 bg-white dark:bg-midnight dark:text-gray-200">
+  
+  <!-- Header (included from components) -->
+  <div id="header-container"></div>
+  
+  <!-- Hero Section -->
+  <section class="relative h-screen-90 bg-cover bg-center" style="background-image: url('assets/images/hero-bg.jpg');">
+    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+    <div class="container mx-auto px-4 h-full flex items-center relative z-10">
+      <div class="max-w-3xl">
+        <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-6 text-shadow-lg">Discover Hidden Gems Around the World</h1>
+        <p class="text-white text-xl md:text-2xl mb-8 text-shadow">Authentic travel experiences, stunning photography, and practical guides for the modern explorer.</p>
+        <a href="#featured-destinations" class="btn-primary">Start Your Journey</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Featured Destinations -->
+  <section id="featured-destinations" class="section-padding bg-sand bg-opacity-20 dark:bg-gray-900">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="mb-4">Featured Destinations</h2>
+        <p class="text-lg max-w-3xl mx-auto">Explore some of the most breathtaking places I've visited and get inspired for your next adventure.</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Destination Card 1 -->
+        <div class="card destination-card" data-category="asia">
+          <div class="relative overflow-hidden h-64">
+            <img src="assets/images/bali.jpg" alt="Bali, Indonesia" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+            <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
+              <h3 class="text-white text-xl font-bold">Bali, Indonesia</h3>
+              <p class="text-gray-200">Island of the Gods</p>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="mb-4">Discover the perfect balance of spiritual tranquility, natural beauty, and vibrant culture in Bali.</p>
+            <a href="destinations.html#bali" class="text-ocean hover:text-forest dark:text-coral dark:hover:text-sunset font-medium inline-flex items-center">
+              Explore Bali
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Destination Card 2 -->
+        <div class="card destination-card" data-category="europe">
+          <div class="relative overflow-hidden h-64">
+            <img src="assets/images/santorini.jpg" alt="Santorini, Greece" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+            <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
+              <h3 class="text-white text-xl font-bold">Santorini, Greece</h3>
+              <p class="text-gray-200">Aegean Paradise</p>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="mb-4">Experience the iconic white-washed buildings, blue domes, and breathtaking sunsets of Santorini.</p>
+            <a href="destinations.html#santorini" class="text-ocean hover:text-forest dark:text-coral dark:hover:text-sunset font-medium inline-flex items-center">
+              Explore Santorini
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Destination Card 3 -->
+        <div class="card destination-card" data-category="middle-east">
+          <div class="relative overflow-hidden h-64">
+            <img src="assets/images/dubai.jpg" alt="Dubai, UAE" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+            <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
+              <h3 class="text-white text-xl font-bold">Dubai, UAE</h3>
+              <p class="text-gray-200">City of the Future</p>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="mb-4">Explore the futuristic cityscape, luxury experiences, and rich cultural heritage of Dubai.</p>
+            <a href="destinations.html#dubai" class="text-ocean hover:text-forest dark:text-coral dark:hover:text-sunset font-medium inline-flex items-center">
+              Explore Dubai
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-12">
+        <a href="destinations.html" class="btn-secondary">View All Destinations</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Interactive Map -->
+  <section class="section-padding bg-white dark:bg-midnight">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="mb-4">Where I've Been</h2>
+        <p class="text-lg max-w-3xl mx-auto">Explore the interactive map to discover all the destinations I've visited and find detailed travel guides.</p>
+      </div>
+      
+      <div id="interactive-map" class="h-96 bg-gray-200 dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+        <!-- Map will be initialized by JavaScript -->
+        <!-- Placeholder for map -->
+        <div class="h-full flex items-center justify-center">
+          <p class="text-gray-500 dark:text-gray-400">Interactive map loading...</p>
+        </div>
+      </div>
+      
+      <div class="text-center mt-8">
+        <a href="destinations.html" class="btn-primary">Explore All Destinations</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Latest Blog Posts -->
+  <section class="section-padding bg-gray-100 dark:bg-gray-900">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="mb-4">Latest from the Blog</h2>
+        <p class="text-lg max-w-3xl mx-auto">Read my latest travel stories, tips, and adventures from around the world.</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Blog Post 1 -->
+        <article class="card">
+          <div class="relative overflow-hidden h-48">
+            <img src="assets/images/blog-1.jpg" alt="10 Hidden Gems in Southeast Asia" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+            <div class="absolute top-0 left-0 bg-forest text-white text-xs font-bold px-3 py-1 m-2 rounded-md dark:bg-coral">Travel Tips</div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-2">
+              <span>June 15, 2023</span>
+              <span class="mx-2">•</span>
+              <span>5 min read</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2">10 Hidden Gems in Southeast Asia You Must Visit</h3>
+            <p class="mb-4">Discover off-the-beaten-path destinations in Southeast Asia that offer authentic experiences away from the tourist crowds.</p>
+            <a href="blog.html#southeast-asia-gems" class="text-ocean hover:text-forest dark:text-coral dark:hover:text-sunset font-medium inline-flex items-center">
+              Read More
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          </div>
+        </article>
+        
+        <!-- Blog Post 2 -->
+        <article class="card">
+          <div class="relative overflow-hidden h-48">
+            <img src="assets/images/blog-2.jpg" alt="Ultimate Guide to Budget Travel in Europe" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+            <div class="absolute top-0 left-0 bg-forest text-white text-xs font-bold px-3 py-1 m-2 rounded-md dark:bg-coral">Budget Travel</div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-2">
+              <span>May 28, 2023</span>
+              <span class="mx-2">•</span>
+              <span>8 min read</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Ultimate Guide to Budget Travel in Europe</h3>
+            <p class="mb-4">Learn how to explore Europe's most beautiful cities without breaking the bank with these practical money-saving tips.</p>
+            <a href="blog.html#budget-europe" class="text-ocean hover:text-forest dark:text-coral dark:hover:text-sunset font-medium inline-flex items-center">
+              Read More
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          </div>
+        </article>
+        
+        <!-- Blog Post 3 -->
+        <article class="card">
+          <div class="relative overflow-hidden h-48">
+            <img src="assets/images/blog-3.jpg" alt="Best Street Food Experiences Around the World" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+            <div class="absolute top-0 left-0 bg-forest text-white text-xs font-bold px-3 py-1 m-2 rounded-md dark:bg-coral">Food & Culture</div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-2">
+              <span>May 10, 2023</span>
+              <span class="mx-2">•</span>
+              <span>6 min read</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Best Street Food Experiences Around the World</h3>
+            <p class="mb-4">From Bangkok's bustling markets to Mexico City's taquerias, discover the most unforgettable street food experiences globally.</p>
+            <a href="blog.html#street-food" class="text-ocean hover:text-forest dark:text-coral dark:hover:text-sunset font-medium inline-flex items-center">
+              Read More
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          </div>
+        </article>
+      </div>
+      
+      <div class="text-center mt-12">
+        <a href="blog.html" class="btn-secondary">View All Posts</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Instagram Feed -->
+  <section class="section-padding bg-white dark:bg-midnight">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="mb-4">Follow My Journey</h2>
+        <p class="text-lg max-w-3xl mx-auto">Join me on Instagram for daily travel inspiration and behind-the-scenes moments from my adventures.</p>
+      </div>
+      
+      <div id="instagram-feed" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <!-- Instagram feed will be populated by JavaScript -->
+        <!-- Placeholder for Instagram feed -->
+        <div class="aspect-square bg-gray-200 dark:bg-gray-800 rounded-md overflow-hidden"></div>
+        <div class="aspect-square bg-gray-200 dark:bg-gray-800 rounded-md overflow-hidden"></div>
+        <div class="aspect-square bg-gray-200 dark:bg-gray-800 rounded-md overflow-hidden"></div>
+        <div class="aspect-square bg-gray-200 dark:bg-gray-800 rounded-md overflow-hidden"></div>
+        <div class="aspect-square bg-gray-200 dark:bg-gray-800 rounded-md overflow-hidden"></div>
+        <div class="aspect-square bg-gray-200 dark:bg-gray-800 rounded-md overflow-hidden"></div>
+      </div>
+      
+      <div class="text-center mt-8">
+        <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" class="btn-secondary">Follow @digitalsaran</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- About Snapshot -->
+  <section class="section-padding bg-forest text-white dark:bg-gray-900">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="md:w-1/3 mb-8 md:mb-0">
+          <div class="rounded-full overflow-hidden w-64 h-64 mx-auto border-4 border-sand">
+            <img src="assets/images/digital-saran.jpg" alt="Digital Saran - Travel Blogger" class="w-full h-full object-cover">
+          </div>
+        </div>
+        <div class="md:w-2/3 md:pl-12">
+          <h2 class="text-sand mb-4">About Digital Saran</h2>
+          <p class="text-lg mb-6">Dubai-based travel blogger exploring the world's hidden gems and sharing authentic travel experiences. With a passion for photography and storytelling, I aim to inspire others to step off the beaten path and discover the extraordinary in every destination.</p>
+          <div class="flex space-x-4">
+            <a href="about.html" class="btn-secondary border-sand text-sand hover:bg-sand hover:text-forest">Learn More About Me</a>
+            <a href="contact.html" class="btn-primary bg-coral hover:bg-sunset">Get in Touch</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Newsletter Signup -->
+  <section class="section-padding bg-sand bg-opacity-20 dark:bg-gray-800">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="mb-4">Join My Newsletter</h2>
+        <p class="text-lg mb-8">Subscribe to receive exclusive travel tips, destination guides, and special offers directly to your inbox.</p>
+        
+        <form id="newsletter-form" class="max-w-md mx-auto">
+          <div class="flex flex-col sm:flex-row gap-4">
+            <input type="email" placeholder="Your email address" required class="form-input flex-grow">
+            <button type="submit" class="btn-primary whitespace-nowrap">Subscribe</button>
+          </div>
+          <p id="newsletter-status" class="mt-2 text-sm"></p>
+          <p class="text-xs text-gray-600 dark:text-gray-400 mt-4">By subscribing, you agree to receive marketing emails. You can unsubscribe at any time.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer (included from components) -->
+  <div id="footer-container"></div>
+  
+  <!-- JavaScript -->
+  <script src="assets/js/main.js"></script>
+  
+  <!-- Component Loader Script -->
+  <script>
+    // Load header and footer components
+    document.addEventListener('DOMContentLoaded', () => {
+      // Load header
+      fetch('components/header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('header-container').innerHTML = data;
+          // Initialize navigation after header is loaded
+          if (typeof initNavigation === 'function') {
+            initNavigation();
+          }
+          if (typeof initDarkMode === 'function') {
+            initDarkMode();
+          }
+        });
+      
+      // Load footer
+      fetch('components/footer.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('footer-container').innerHTML = data;
+        });
+    });
+  </script>
+</body>
+</html>

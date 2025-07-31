@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore travel destinations around the world with Digital Saran's comprehensive guides, tips, and stunning photography. Find your next adventure!">
+  <title>Destinations | Digital Saran Travel Blog</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  
+  <!-- Schema.org markup for Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Travel Destinations",
+    "description": "Explore travel destinations around the world with Digital Saran's comprehensive guides, tips, and stunning photography.",
+    "url": "https://digitalsaran.com/destinations.html",
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "url": "https://digitalsaran.com/guides/asia/japan.html",
+          "name": "Japan Travel Guide"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "url": "https://digitalsaran.com/guides/europe/italy.html",
+          "name": "Italy Travel Guide"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "url": "https://digitalsaran.com/guides/north-america/usa.html",
+          "name": "USA Travel Guide"
+        }
+      ]
+    }
+  }
+  </script>
+</head>
+<body class="font-sans text-gray-800 bg-white dark:bg-midnight dark:text-gray-200">
+  
+  <!-- Header (included from components) -->
+  <div id="header-container"></div>
+  
+  <!-- Hero Section -->
+  <section class="relative h-80 bg-cover bg-center" style="background-image: url('assets/images/destinations-hero.jpg');">
+    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+    <div class="container mx-auto px-4 h-full flex items-center justify-center relative z-10">
+      <div class="text-center">
+        <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-6 text-shadow-lg">Destinations</h1>
+        <p class="text-white text-xl md:text-2xl text-shadow">Explore the world's most captivating places</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Interactive Map Section -->
+  <section class="section-padding bg-white dark:bg-midnight">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="mb-4">Explore by Region</h2>
+        <p class="text-lg max-w-3xl mx-auto">Click on a region to discover detailed travel guides, tips, and inspiration.</p>
+      </div>
+      
+      <div class="h-96 bg-sand bg-opacity-20 dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+        <!-- Interactive map will be initialized by JavaScript -->
+        <!-- Placeholder for map -->
+        <div id="world-map" class="h-full flex items-center justify-center">
+          <p class="text-gray-500 dark:text-gray-400">Interactive map loading...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Destination Filters -->
+  <section class="py-8 bg-sand bg-opacity-20 dark:bg-gray-900">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+        <!-- Search Box -->
+        <div class="w-full md:w-1/3">
+          <div class="relative">
+            <input type="text" id="destination-search" placeholder="Search destinations..." class="form-input pl-10 w-full">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 absolute left-3 top-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
+        </div>
+        
+        <!-- Filter Dropdowns -->
+        <div class="flex flex-wrap justify-end gap-4">
+          <select id="continent-filter" class="form-select">
+            <option value="">All Continents</option>
+            <option value="asia">Asia</option>
+            <option value="europe">Europe</option>
+            <option value="north-america">North America</option>
+            <option value="south-america">South America</option>
+            <option value="africa">Africa</option>
+            <option value="oceania">Oceania</option>
+            <option value="antarctica">Antarctica</option>
+          </select>
+          
+          <select id="travel-style-filter" class="form-select">
+            <option value="">All Travel Styles</option>
+            <option value="adventure">Adventure</option>
+            <option value="luxury">Luxury</option>
+            <option value="budget">Budget</option>
+            <option value="family">Family</option>
+            <option value="solo">Solo</option>
+            <option value="cultural">Cultural</option>
+            <option value="food">Food & Culinary</option>
+          </select>
+          
+          <select id="budget-filter" class="form-select">
+            <option value="">All Budgets</option>
+            <option value="budget">Budget ($)</option>
+            <option value="mid-range">Mid-Range ($$)</option>
+            <option value="luxury">Luxury ($$$)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Destination Cards -->
+  <section class="section-padding bg-white dark:bg-midnight">
+    <div class="container mx-auto px-4">
+      <div id="destination-count" class="mb-8 text-lg font-medium">Showing all 15 destinations</div>
+      
+      <div id="destination-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Destination Card 1: Japan -->
+        <div class="destination-card" data-continent="asia" data-style="cultural,food" data-budget="mid-range">
+          <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
+            <a href="guides/asia/japan.html" class="block">
+              <div class="relative aspect-w-16 aspect-h-9 overflow-hidden">
+                <img src="assets/images/destinations/japan.jpg" alt="Cherry blossoms and Mount Fuji in Japan" class="object-cover w-full h-full transform transition-transform duration-500 hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+                <div class="absolute bottom-0 left-0 p-4 text-white">
+                  <h3 class="text-2xl font-bold font-display mb-1">Japan</h3>
+                  <div class="flex items-center">
+                    <span class="bg-forest text-white text-xs px-2 py-1 rounded-full">Asia</span>
+                    <span class="ml-2 text-sm">12 Articles</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="p-4">
+              <p class="text-gray-700 dark:text-gray-300 mb-4">Ancient traditions meet futuristic innovation in the Land of the Rising Sun. Explore vibrant Tokyo, serene Kyoto, and picturesque countryside.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="text-xs bg-sand bg-opacity-20 dark:bg-gray-700 px-2 py-1 rounded-full">Cultural</span>
+                <span class="text-xs bg-sand bg-opacity-20 dark:bg-gray-700 px-2 py-1 rounded-full">Food</span>
+                <span class="text-xs bg-sand bg-opacity-20 dark:bg-gray-700 px-2 py-1 rounded-full">Mid-Range</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Destination Card 2: Italy -->
+        <div class="destination-card" data-continent="europe" data-style="cultural,food,luxury" data-budget="mid-range">
+          <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
+            <a href="guides/europe/italy.html" class="block">
+              <div class="relative aspect-w-16 aspect-h-9 overflow-hidden">
+                <img src="assets/images/destinations/italy.jpg" alt="Colorful buildings in Cinque Terre, Italy" class="object-cover w-full h-full transform transition-transform duration-500 hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+                <div class="absolute bottom-0 left-0 p-4 text-white">
+                  <h3 class="text-2xl font-bold font-display mb-1">Italy</h3>
+                  <div class="flex items-center">
+                    <span class="bg-forest text-white text-xs px-2 py-1 rounded-full">Europe</span>
+                    <span class="ml-2 text-sm">10 Articles</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="p-4">
+              <p class="text-gray-700 dark:text-gray-300 mb-4">A paradise of art, history, and cuisine. From Rome's ancient ruins to Venice's romantic canals and Tuscany's rolling hills.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="text-xs bg-sand bg-opacity-20 dark:bg-gray-700 px-2 py-1 rounded-full">Cultural</span>
+                <span class="text-xs bg-sand bg-opacity-20 dark:bg-gray-700 px-2 py-1 rounded-full">Food</span>
+                <span class="text-xs bg-sand bg-opacity-20 dark:bg-gray-700 px-2 py-1 rounded-full">Luxury</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Destination Card 3: Thailand -->
+        <div class="destination-card" data-continent="asia" data-style="budget,adventure,food" data-budget="budget">
+          <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
+            <a href="guides/asia/thailand.html" class="block">
+              <div class="relative aspect-w-16 aspect-h-9 overflow-hidden">
+                <img src="assets/images/destinations/thailand.jpg" alt="Long-tail boats on a tropical beach in Thailand" class="object-cover w-full h-full transform transition-transform duration-500 hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+                <div class="absolute bottom-0 left-0 p-4 text-white">
+                  <h3 class="text-2xl font-bold font-display mb-1">Thailand</h3>
+                  <div class="flex items-center">
+                    <span class="bg-forest text-white text-xs px-2 py-1 rounded-full">Asia</span>
+                    <span class="ml-2 text-sm">8 Articles</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="p-4">
+              <p class="text-gray-700 dark:text-gray-300 mb-4">The Land of Smiles offers pristine beaches, lush jungles, vibrant street food, and ornate temples. Perfect for budget travelers.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="text-xs bg-sand bg-opacity-20 dark:bg-gray-700 px-2 py-1 rounded-full">Budget</span>
+                <span class="text-xs bg-sand bg-opacity-20 dark:bg-gray-700 px-2 py-1 rounded-full">Adventure</span>
+                <span class="text-xs bg-sand bg-opacity-20 dark:bg-gray-700 px-2 py-1 rounded-full">Food</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Destination Card 4: Morocco -->
+        <div class="destination-card" data-continent="africa" data-style="cultural,adventure" data-budget="budget">
+          <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
+            <a href="guides/africa/morocco.html" class="block">
+              <div class="relative aspect-w-16 aspect-h-9 overflow-hidden">
+                <img src="assets/images/destinations/morocco.jpg" alt="Colorful spice market in Marrakech, Morocco" class="object-cover w-full h-full transform transition-transform duration-500 hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+                <div class="absolute bottom-0 left-0 p-4 text-white">
+                  <h3 class="text-2xl font-bold font-display mb-1">Morocco</h3>
+                  <div class="flex items-center">
+                    <span class="bg-forest text-white text-xs px-2 py-1 rounded-full">Africa</span>
+                    <span class="ml-2 text-sm">6 Articles</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="p-4">
+              <p class="text-gray-700 dark:text-gray-300 mb-4">A sensory feast of colorful markets, desert landscapes, and ancient medinas. Experience the magic of Marrakech and the Sahara.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="text-xs bg-sand bg-opacity-20 dark:bg-gray-700 px-2 py-1 rounded-full">Cultural</span>
+                <span class="text-xs bg-sand bg-opacity-20 dark:bg-gray-700 px-2 py-1 rounded-full">Adventure</span>
+                <span class="text-xs bg-sand bg-opacity-20 dark:bg-gray-700 px-2 py-1 rounded-full">Budget</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Destination Card 5: New Zealand -->
+        <div class="destination-card" data-continent="oceania" data-style="adventure,luxury" data-budget="luxury">
+          <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
+            <a href="guides/oceania/new-zealand.html" class="block">
+              <div class="relative aspect-w-16 aspect-h-9 overflow-hidden">
+                <img src="assets/images/destinations/new-zealand.jpg" alt="Milford Sound in New Zealand" class="object-cover w-full h-full transform transition-transform duration-500 hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+                <div class="absolute bottom-0 left-0 p-4 text-white">
+                  <h3 class="text-2xl font-bold font-display mb-1">New Zealand</h3>
+                  <div class="flex items-center">
+                    <span class="bg-forest text-white text-xs px-2 py-1 rounded-full">Oceania</span>
+                    <span class="ml-2 text-sm">7 Articles</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="p-4">
+              <p class="text-gray-700 dark:text-gray-300 mb-4">A paradise for outdoor enthusiasts with dramatic landscapes from mountains to fjords. The ultimate adventure playground.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="text-xs bg-sand bg-opacity-20 dark:bg-gray-700 px-2 py-1 rounded-full">Adventure</span>
+                <span class="text-xs bg-sand bg-opacity-20 dark:bg-gray-700 px-2 py-1 rounded-full">Luxury</span>
+                <span class="text-xs bg-sand bg-opacity-20 dark:bg-gray-700 px-2 py-1 rounded-full">$$$</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Destination Card 6: Peru -->
+        <div class="destination-card" data-continent="south-america" data-style="adventure,cultural" data-budget="mid-range">
+          <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
+            <a href="guides/south-america/peru.html" class="block">
+              <div class="relative aspect-w-16 aspect-h-9 overflow-hidden">
+                <img src="assets/images/destinations/peru.jpg" alt="Machu Picchu in Peru" class="object-cover w-full h-full transform transition-transform duration-500 hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+                <div class="absolute bottom-0 left-0 p-4 text-white">
+                  <h3 class="text-2xl font-bold font-display mb-1">Peru</h3>
+                  <div class="flex items-center">
+                    <span class="bg-forest text-white text-xs px-2 py-1 rounded-full">South America</span>
+                    <span class="ml-2 text-sm">5 Articles</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="p-4">
+              <p class="text-gray-700 dark:text-gray-300 mb-4">Home to ancient Incan ruins, the Amazon rainforest, and diverse culinary traditions. Machu Picchu is just the beginning.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="text-xs bg-sand bg-opacity-20 dark:bg-gray-700 px-2 py-1 rounded-full">Adventure</span>
+                <span class="text-xs bg-sand bg-opacity-20 dark:bg-gray-700 px-2 py-1 rounded-full">Cultural</span>
+                <span class="text-xs bg-sand bg-opacity-20 dark:bg-gray-700 px-2 py-1 rounded-full">Mid-Range</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- More destination cards can be added here -->
+      </div>
+      
+      <!-- Load More Button -->
+      <div class="text-center mt-12">
+        <button id="load-more" class="btn-primary">Load More Destinations</button>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Newsletter Section -->
+  <section class="section-padding bg-forest text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-sand mb-6">Get Travel Inspiration Delivered</h2>
+        <p class="text-lg mb-8">Sign up for my newsletter and receive exclusive travel tips, hidden gem destinations, and special offers directly to your inbox.</p>
+        
+        <form id="newsletter-form" class="flex flex-col md:flex-row gap-4">
+          <input type="email" placeholder="Your email address" class="form-input flex-grow" required>
+          <button type="submit" class="btn-secondary border-sand text-sand hover:bg-sand hover:text-forest">Subscribe</button>
+        </form>
+        <p class="text-sm mt-4 text-sand text-opacity-80">I respect your privacy. Unsubscribe at any time.</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer (included from components) -->
+  <div id="footer-container"></div>
+  
+  <!-- JavaScript -->
+  <script src="assets/js/main.js"></script>
+  
+  <!-- Component Loader Script -->
+  <script>
+    // Load header and footer components
+    document.addEventListener('DOMContentLoaded', () => {
+      // Load header
+      fetch('components/header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('header-container').innerHTML = data;
+          // Initialize navigation after header is loaded
+          if (typeof initNavigation === 'function') {
+            initNavigation();
+          }
+          if (typeof initDarkMode === 'function') {
+            initDarkMode();
+          }
+        });
+      
+      // Load footer
+      fetch('components/footer.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('footer-container').innerHTML = data;
+        });
+      
+      // Initialize destination filtering
+      initDestinationFilters();
+    });
+    
+    // Destination filtering functionality
+    function initDestinationFilters() {
+      const searchInput = document.getElementById('destination-search');
+      const continentFilter = document.getElementById('continent-filter');
+      const styleFilter = document.getElementById('travel-style-filter');
+      const budgetFilter = document.getElementById('budget-filter');
+      const destinationCards = document.querySelectorAll('.destination-card');
+      const destinationCount = document.getElementById('destination-count');
+      const loadMoreBtn = document.getElementById('load-more');
+      
+      // Initial count
+      updateDestinationCount();
+      
+      // Search input event
+      searchInput.addEventListener('input', filterDestinations);
+      
+      // Filter dropdown events
+      continentFilter.addEventListener('change', filterDestinations);
+      styleFilter.addEventListener('change', filterDestinations);
+      budgetFilter.addEventListener('change', filterDestinations);
+      
+      // Load more button (for demonstration)
+      loadMoreBtn.addEventListener('click', () => {
+        alert('In a real implementation, this would load more destinations from the server.');
+      });
+      
+      function filterDestinations() {
+        const searchTerm = searchInput.value.toLowerCase();
+        const continentValue = continentFilter.value;
+        const styleValue = styleFilter.value;
+        const budgetValue = budgetFilter.value;
+        
+        let visibleCount = 0;
+        
+        destinationCards.forEach(card => {
+          const cardTitle = card.querySelector('h3').textContent.toLowerCase();
+          const cardDescription = card.querySelector('p').textContent.toLowerCase();
+          const cardContinent = card.dataset.continent;
+          const cardStyles = card.dataset.style.split(',');
+          const cardBudget = card.dataset.budget;
+          
+          // Check if card matches all filters
+          const matchesSearch = cardTitle.includes(searchTerm) || cardDescription.includes(searchTerm);
+          const matchesContinent = continentValue === '' || cardContinent === continentValue;
+          const matchesStyle = styleValue === '' || cardStyles.includes(styleValue);
+          const matchesBudget = budgetValue === '' || cardBudget === budgetValue;
+          
+          // Show/hide card based on filter matches
+          if (matchesSearch && matchesContinent && matchesStyle && matchesBudget) {
+            card.classList.remove('hidden');
+            visibleCount++;
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+        
+        updateDestinationCount(visibleCount);
+      }
+      
+      function updateDestinationCount(count) {
+        const totalCount = destinationCards.length;
+        const visibleCount = count !== undefined ? count : totalCount;
+        
+        if (visibleCount === totalCount) {
+          destinationCount.textContent = `Showing all ${totalCount} destinations`;
+        } else {
+          destinationCount.textContent = `Showing ${visibleCount} of ${totalCount} destinations`;
+        }
+      }
+    }
+  </script>
+</body>
+</html>

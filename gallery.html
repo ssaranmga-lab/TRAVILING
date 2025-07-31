@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore stunning travel photography from around the world. High-quality images of landscapes, cities, people, and cultures captured during global adventures.">
+  <title>Photo Gallery | Digital Saran Travel Blog</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  
+  <!-- Lightbox CSS (Simple Lightbox) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplelightbox@2.10.3/dist/simple-lightbox.min.css">
+  
+  <!-- Schema.org markup for Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    "name": "Digital Saran Travel Photography",
+    "description": "A collection of high-quality travel photography from destinations around the world, captured by Digital Saran.",
+    "url": "https://digitalsaran.com/gallery.html",
+    "author": {
+      "@type": "Person",
+      "name": "Digital Saran",
+      "url": "https://digitalsaran.com/about.html"
+    },
+    "contentLocation": [
+      {
+        "@type": "Place",
+        "name": "Japan"
+      },
+      {
+        "@type": "Place",
+        "name": "Morocco"
+      },
+      {
+        "@type": "Place",
+        "name": "Italy"
+      },
+      {
+        "@type": "Place",
+        "name": "Indonesia"
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="font-sans text-gray-800 bg-white dark:bg-midnight dark:text-gray-200">
+  
+  <!-- Header (included from components) -->
+  <div id="header-container"></div>
+  
+  <!-- Hero Section -->
+  <section class="relative h-80 bg-cover bg-center" style="background-image: url('assets/images/gallery-hero.jpg');">
+    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+    <div class="container mx-auto px-4 h-full flex items-center justify-center relative z-10">
+      <div class="text-center">
+        <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-6 text-shadow-lg">Photo Gallery</h1>
+        <p class="text-white text-xl md:text-2xl text-shadow">Capturing the world's beauty one frame at a time</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Gallery Filters -->
+  <section class="py-8 bg-sand bg-opacity-20 dark:bg-gray-900">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+        <!-- Search Box -->
+        <div class="w-full md:w-1/3">
+          <div class="relative">
+            <input type="text" id="gallery-search" placeholder="Search photos..." class="form-input pl-10 w-full">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 absolute left-3 top-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
+        </div>
+        
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap justify-center md:justify-end gap-2">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="landscapes">Landscapes</button>
+          <button class="filter-btn" data-filter="cities">Cities</button>
+          <button class="filter-btn" data-filter="people">People</button>
+          <button class="filter-btn" data-filter="food">Food</button>
+          <button class="filter-btn" data-filter="culture">Culture</button>
+        </div>
+      </div>
+      
+      <!-- Region Filter -->
+      <div class="mt-4 flex flex-wrap justify-center gap-2">
+        <span class="text-sm font-medium mr-2 mt-1">Regions:</span>
+        <button class="region-btn active" data-region="all">All Regions</button>
+        <button class="region-btn" data-region="asia">Asia</button>
+        <button class="region-btn" data-region="europe">Europe</button>
+        <button class="region-btn" data-region="africa">Africa</button>
+        <button class="region-btn" data-region="americas">Americas</button>
+        <button class="region-btn" data-region="oceania">Oceania</button>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Gallery Section -->
+  <section class="section-padding bg-white dark:bg-midnight">
+    <div class="container mx-auto px-4">
+      <div id="photo-count" class="mb-8 text-lg font-medium">Showing all 24 photos</div>
+      
+      <!-- Masonry Gallery -->
+      <div id="gallery" class="gallery-grid">
+        <!-- Photo 1 - Japan, Landscape -->
+        <div class="gallery-item" data-category="landscapes" data-region="asia">
+          <a href="assets/images/gallery/japan-fuji.jpg" class="gallery-link">
+            <div class="relative overflow-hidden rounded-lg shadow-md group">
+              <img 
+                src="assets/images/gallery/thumbnails/japan-fuji-thumb.jpg" 
+                data-src="assets/images/gallery/japan-fuji.jpg" 
+                alt="Mount Fuji reflected in Lake Kawaguchiko at sunrise, Japan" 
+                class="lazy w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110">
+              <div class="absolute inset-0 bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                <div class="p-4 w-full">
+                  <h3 class="text-white text-lg font-bold mb-1">Mount Fuji at Dawn</h3>
+                  <div class="flex justify-between">
+                    <span class="text-white text-sm">Japan</span>
+                    <div class="flex space-x-2">
+                      <button class="text-white hover:text-coral" aria-label="Share photo">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                        </svg>
+                      </button>
+                      <button class="text-white hover:text-coral" aria-label="Download photo">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        
+        <!-- Photo 2 - Morocco, Culture -->
+        <div class="gallery-item" data-category="culture" data-region="africa">
+          <a href="assets/images/gallery/morocco-market.jpg" class="gallery-link">
+            <div class="relative overflow-hidden rounded-lg shadow-md group">
+              <img 
+                src="assets/images/gallery/thumbnails/morocco-market-thumb.jpg" 
+                data-src="assets/images/gallery/morocco-market.jpg" 
+                alt="Colorful spice market in Marrakech, Morocco" 
+                class="lazy w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110">
+              <div class="absolute inset-0 bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                <div class="p-4 w-full">
+                  <h3 class="text-white text-lg font-bold mb-1">Marrakech Spice Market</h3>
+                  <div class="flex justify-between">
+                    <span class="text-white text-sm">Morocco</span>
+                    <div class="flex space-x-2">
+                      <button class="text-white hover:text-coral" aria-label="Share photo">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                        </svg>
+                      </button>
+                      <button class="text-white hover:text-coral" aria-label="Download photo">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        
+        <!-- Photo 3 - Italy, Cities -->
+        <div class="gallery-item" data-category="cities" data-region="europe">
+          <a href="assets/images/gallery/venice-canal.jpg" class="gallery-link">
+            <div class="relative overflow-hidden rounded-lg shadow-md group">
+              <img 
+                src="assets/images/gallery/thumbnails/venice-canal-thumb.jpg" 
+                data-src="assets/images/gallery/venice-canal.jpg" 
+                alt="Gondolas on a canal in Venice, Italy" 
+                class="lazy w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110">
+              <div class="absolute inset-0 bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                <div class="p-4 w-full">
+                  <h3 class="text-white text-lg font-bold mb-1">Venice Canals</h3>
+                  <div class="flex justify-between">
+                    <span class="text-white text-sm">Italy</span>
+                    <div class="flex space-x-2">
+                      <button class="text-white hover:text-coral" aria-label="Share photo">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                        </svg>
+                      </button>
+                      <button class="text-white hover:text-coral" aria-label="Download photo">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        
+        <!-- Photo 4 - Bali, People -->
+        <div class="gallery-item" data-category="people" data-region="asia">
+          <a href="assets/images/gallery/bali-ceremony.jpg" class="gallery-link">
+            <div class="relative overflow-hidden rounded-lg shadow-md group">
+              <img 
+                src="assets/images/gallery/thumbnails/bali-ceremony-thumb.jpg" 
+                data-src="assets/images/gallery/bali-ceremony.jpg" 
+                alt="Traditional Balinese ceremony with locals in traditional dress" 
+                class="lazy w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110">
+              <div class="absolute inset-0 bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                <div class="p-4 w-full">
+                  <h3 class="text-white text-lg font-bold mb-1">Balinese Ceremony</h3>
+                  <div class="flex justify-between">
+                    <span class="text-white text-sm">Indonesia</span>
+                    <div class="flex space-x-2">
+                      <button class="text-white hover:text-coral" aria-label="Share photo">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                        </svg>
+                      </button>
+                      <button class="text-white hover:text-coral" aria-label="Download photo">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        
+        <!-- Photo 5 - Japan, Food -->
+        <div class="gallery-item" data-category="food" data-region="asia">
+          <a href="assets/images/gallery/tokyo-sushi.jpg" class="gallery-link">
+            <div class="relative overflow-hidden rounded-lg shadow-md group">
+              <img 
+                src="assets/images/gallery/thumbnails/tokyo-sushi-thumb.jpg" 
+                data-src="assets/images/gallery/tokyo-sushi.jpg" 
+                alt="Assortment of fresh sushi at a Tokyo restaurant" 
+                class="lazy w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110">
+              <div class="absolute inset-0 bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                <div class="p-4 w-full">
+                  <h3 class="text-white text-lg font-bold mb-1">Tokyo Sushi Experience</h3>
+                  <div class="flex justify-between">
+                    <span class="text-white text-sm">Japan</span>
+                    <div class="flex space-x-2">
+                      <button class="text-white hover:text-coral" aria-label="Share photo">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                        </svg>
+                      </button>
+                      <button class="text-white hover:text-coral" aria-label="Download photo">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        
+        <!-- Photo 6 - New York, Cities -->
+        <div class="gallery-item" data-category="cities" data-region="americas">
+          <a href="assets/images/gallery/new-york-skyline.jpg" class="gallery-link">
+            <div class="relative overflow-hidden rounded-lg shadow-md group">
+              <img 
+                src="assets/images/gallery/thumbnails/new-york-skyline-thumb.jpg" 
+                data-src="assets/images/gallery/new-york-skyline.jpg" 
+                alt="New York City skyline at sunset" 
+                class="lazy w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110">
+              <div class="absolute inset-0 bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                <div class="p-4 w-full">
+                  <h3 class="text-white text-lg font-bold mb-1">Manhattan Sunset</h3>
+                  <div class="flex justify-between">
+                    <span class="text-white text-sm">USA</span>
+                    <div class="flex space-x-2">
+                      <button class="text-white hover:text-coral" aria-label="Share photo">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                        </svg>
+                      </button>
+                      <button class="text-white hover:text-coral" aria-label="Download photo">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        
+        <!-- Photo 7 - Australia, Landscapes -->
+        <div class="gallery-item" data-category="landscapes" data-region="oceania">
+          <a href="assets/images/gallery/australia-uluru.jpg" class="gallery-link">
+            <div class="relative overflow-hidden rounded-lg shadow-md group">
+              <img 
+                src="assets/images/gallery/thumbnails/australia-uluru-thumb.jpg" 
+                data-src="assets/images/gallery/australia-uluru.jpg" 
+                alt="Uluru (Ayers Rock) at sunset in Australia's Northern Territory" 
+                class="lazy w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110">
+              <div class="absolute inset-0 bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                <div class="p-4 w-full">
+                  <h3 class="text-white text-lg font-bold mb-1">Uluru at Sunset</h3>
+                  <div class="flex justify-between">
+                    <span class="text-white text-sm">Australia</span>
+                    <div class="flex space-x-2">
+                      <button class="text-white hover:text-coral" aria-label="Share photo">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                        </svg>
+                      </button>
+                      <button class="text-white hover:text-coral" aria-label="Download photo">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        
+        <!-- Photo 8 - Morocco, Landscapes -->
+        <div class="gallery-item" data-category="landscapes" data-region="africa">
+          <a href="assets/images/gallery/morocco-desert.jpg" class="gallery-link">
+            <div class="relative overflow-hidden rounded-lg shadow-md group">
+              <img 
+                src="assets/images/gallery/thumbnails/morocco-desert-thumb.jpg" 
+                data-src="assets/images/gallery/morocco-desert.jpg" 
+                alt="Sand dunes in the Sahara Desert, Morocco" 
+                class="lazy w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110">
+              <div class="absolute inset-0 bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                <div class="p-4 w-full">
+                  <h3 class="text-white text-lg font-bold mb-1">Sahara Desert Dunes</h3>
+                  <div class="flex justify-between">
+                    <span class="text-white text-sm">Morocco</span>
+                    <div class="flex space-x-2">
+                      <button class="text-white hover:text-coral" aria-label="Share photo">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                        </svg>
+                      </button>
+                      <button class="text-white hover:text-coral" aria-label="Download photo">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        
+        <!-- Add more gallery items as needed -->
+      </div>
+      
+      <!-- Load More Button -->
+      <div class="text-center mt-12">
+        <button id="load-more" class="btn-primary">Load More Photos</button>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Photography Tips Section -->
+  <section class="section-padding bg-sand bg-opacity-20 dark:bg-gray-900">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="mb-4">Travel Photography Tips</h2>
+        <p class="text-lg max-w-3xl mx-auto">Capture your own stunning travel photos with these professional tips.</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Tip 1 -->
+        <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md">
+          <div class="text-forest dark:text-coral text-4xl mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Golden Hour Magic</h3>
+          <p class="text-gray-700 dark:text-gray-300">Shoot during the first hour after sunrise and the last hour before sunset for warm, soft lighting that adds depth and dimension to your photos.</p>
+        </div>
+        
+        <!-- Tip 2 -->
+        <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md">
+          <div class="text-forest dark:text-coral text-4xl mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Rule of Thirds</h3>
+          <p class="text-gray-700 dark:text-gray-300">Place key elements along the grid lines or at their intersections to create more balanced and interesting compositions that draw the viewer's eye.</p>
+        </div>
+        
+        <!-- Tip 3 -->
+        <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md">
+          <div class="text-forest dark:text-coral text-4xl mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Local Perspective</h3>
+          <p class="text-gray-700 dark:text-gray-300">Engage with locals and capture authentic moments. Ask permission when photographing people and try to tell a story through your images.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Newsletter Section -->
+  <section class="section-padding bg-forest text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-sand mb-6">Get Photography Tips in Your Inbox</h2>
+        <p class="text-lg mb-8">Subscribe to receive exclusive photography tutorials, gear recommendations, and notifications when new photos are added to the gallery.</p>
+        
+        <form id="newsletter-form" class="flex flex-col md:flex-row gap-4">
+          <input type="email" placeholder="Your email address" class="form-input flex-grow" required>
+          <button type="submit" class="btn-secondary border-sand text-sand hover:bg-sand hover:text-forest">Subscribe</button>
+        </form>
+        <p class="text-sm mt-4 text-sand text-opacity-80">I respect your privacy. Unsubscribe at any time.</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer (included from components) -->
+  <div id="footer-container"></div>
+  
+  <!-- Simple Lightbox JS -->
+  <script src="https://cdn.jsdelivr.net/npm/simplelightbox@2.10.3/dist/simple-lightbox.min.js"></script>
+  
+  <!-- JavaScript -->
+  <script src="assets/js/main.js"></script>
+  
+  <!-- Component Loader Script -->
+  <script>
+    // Load header and footer components
+    document.addEventListener('DOMContentLoaded', () => {
+      // Load header
+      fetch('components/header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('header-container').innerHTML = data;
+          // Initialize navigation after header is loaded
+          if (typeof initNavigation === 'function') {
+            initNavigation();
+          }
+          if (typeof initDarkMode === 'function') {
+            initDarkMode();
+          }
+        });
+      
+      // Load footer
+      fetch('components/footer.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('footer-container').innerHTML = data;
+        });
+      
+      // Initialize gallery functionality
+      initGallery();
+    });
+    
+    // Gallery functionality
+    function initGallery() {
+      // Initialize lightbox
+      const lightbox = new SimpleLightbox('.gallery-link', {
+        captionsData: 'alt',
+        captionDelay: 250,
+        animationSpeed: 250,
+        fadeSpeed: 200,
+        widthRatio: 0.8,
+        heightRatio: 0.8
+      });
+      
+      // Lazy loading for images
+      const lazyImages = document.querySelectorAll('img.lazy');
+      if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              img.src = img.dataset.src;
+              img.classList.remove('lazy');
+              imageObserver.unobserve(img);
+            }
+          });
+        });
+        
+        lazyImages.forEach(img => {
+          imageObserver.observe(img);
+        });
+      } else {
+        // Fallback for browsers without IntersectionObserver
+        lazyImages.forEach(img => {
+          img.src = img.dataset.src;
+          img.classList.remove('lazy');
+        });
+      }
+      
+      // Filter buttons functionality
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const regionBtns = document.querySelectorAll('.region-btn');
+      const galleryItems = document.querySelectorAll('.gallery-item');
+      const photoCount = document.getElementById('photo-count');
+      const searchInput = document.getElementById('gallery-search');
+      const loadMoreBtn = document.getElementById('load-more');
+      
+      let activeCategory = 'all';
+      let activeRegion = 'all';
+      
+      // Update photo count
+      function updatePhotoCount() {
+        const totalCount = galleryItems.length;
+        const visibleCount = document.querySelectorAll('.gallery-item:not(.hidden)').length;
+        
+        if (visibleCount === totalCount) {
+          photoCount.textContent = `Showing all ${totalCount} photos`;
+        } else {
+          photoCount.textContent = `Showing ${visibleCount} of ${totalCount} photos`;
+        }
+      }
+      
+      // Filter gallery items
+      function filterGallery() {
+        const searchTerm = searchInput.value.toLowerCase();
+        
+        galleryItems.forEach(item => {
+          const title = item.querySelector('h3').textContent.toLowerCase();
+          const location = item.querySelector('span').textContent.toLowerCase();
+          const category = item.dataset.category;
+          const region = item.dataset.region;
+          
+          const matchesSearch = title.includes(searchTerm) || location.includes(searchTerm);
+          const matchesCategory = activeCategory === 'all' || category === activeCategory;
+          const matchesRegion = activeRegion === 'all' || region === activeRegion;
+          
+          if (matchesSearch && matchesCategory && matchesRegion) {
+            item.classList.remove('hidden');
+          } else {
+            item.classList.add('hidden');
+          }
+        });
+        
+        updatePhotoCount();
+      }
+      
+      // Category filter button click events
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Remove active class from all buttons
+          filterBtns.forEach(b => b.classList.remove('active'));
+          // Add active class to clicked button
+          btn.classList.add('active');
+          // Update active category
+          activeCategory = btn.dataset.filter;
+          // Filter gallery
+          filterGallery();
+        });
+      });
+      
+      // Region filter button click events
+      regionBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Remove active class from all buttons
+          regionBtns.forEach(b => b.classList.remove('active'));
+          // Add active class to clicked button
+          btn.classList.add('active');
+          // Update active region
+          activeRegion = btn.dataset.region;
+          // Filter gallery
+          filterGallery();
+        });
+      });
+      
+      // Search input event
+      searchInput.addEventListener('input', filterGallery);
+      
+      // Load more button (for demonstration)
+      loadMoreBtn.addEventListener('click', () => {
+        alert('In a real implementation, this would load more photos from the server.');
+      });
+      
+      // Initial count
+      updatePhotoCount();
+    }
+  </script>
+  
+  <!-- Additional CSS for Gallery -->
+  <style>
+    /* Filter Buttons */
+    .filter-btn, .region-btn {
+      @apply px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200;
+      @apply bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300;
+      @apply hover:bg-ocean hover:text-white dark:hover:bg-coral;
+    }
+    
+    .filter-btn.active, .region-btn.active {
+      @apply bg-ocean text-white dark:bg-coral;
+    }
+    
+    /* Masonry Gallery Grid */
+    .gallery-grid {
+      @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4;
+    }
+    
+    /* Responsive adjustments for gallery items */
+    .gallery-item:nth-child(4n+1) {
+      @apply xl:col-span-2 xl:row-span-2;
+    }
+    
+    .gallery-item:nth-child(6n+3) {
+      @apply lg:col-span-2;
+    }
+    
+    /* Watermark for downloaded images */
+    .gallery-item img::after {
+      content: "© Digital Saran";
+      @apply absolute bottom-2 right-2 text-white text-opacity-70 text-sm;
+    }
+  </style>
+</body>
+</html>

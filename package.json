@@ -1,0 +1,26 @@
+{
+  "name": "digital-saran-travel-blog",
+  "version": "1.0.0",
+  "description": "Professional travel blog for Digital Saran",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/style.css --watch",
+    "build": "tailwindcss -i ./assets/css/input.css -o ./assets/css/style.css --minify",
+    "dev": "live-server --port=8080"
+  },
+  "keywords": [
+    "travel",
+    "blog",
+    "destinations",
+    "guides",
+    "photography"
+  ],
+  "author": "Digital Saran",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "live-server": "^1.2.2",
+    "postcss": "^8.4.24",
+    "tailwindcss": "^3.3.2"
+  }
+}

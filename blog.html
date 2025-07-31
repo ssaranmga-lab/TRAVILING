@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Archive - Digital Saran Travel Blog</title>
+  <meta name="description" content="Explore our collection of travel stories, tips, and guides from around the world. Find articles by category, destination, or search for specific topics.">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://digitalsaran.com/blog.html">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Blog Archive - Digital Saran Travel Blog">
+  <meta property="og:description" content="Explore our collection of travel stories, tips, and guides from around the world. Find articles by category, destination, or search for specific topics.">
+  <meta property="og:image" content="https://digitalsaran.com/assets/images/og-blog.jpg">
+  <meta property="og:url" content="https://digitalsaran.com/blog.html">
+  <meta property="og:type" content="website">
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blog Archive - Digital Saran Travel Blog">
+  <meta name="twitter:description" content="Explore our collection of travel stories, tips, and guides from around the world. Find articles by category, destination, or search for specific topics.">
+  <meta name="twitter:image" content="https://digitalsaran.com/assets/images/og-blog.jpg">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Merriweather:wght@400;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+  
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "headline": "Blog Archive - Digital Saran Travel Blog",
+    "description": "Explore our collection of travel stories, tips, and guides from around the world. Find articles by category, destination, or search for specific topics.",
+    "image": "https://digitalsaran.com/assets/images/og-blog.jpg",
+    "publisher": {
+      "@type": "Person",
+      "name": "Digital Saran",
+      "sameAs": [
+        "https://twitter.com/digitalsaran",
+        "https://instagram.com/digitalsaran",
+        "https://facebook.com/digitalsaran"
+      ]
+    },
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "url": "https://digitalsaran.com/blog/hidden-gems-bali.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "url": "https://digitalsaran.com/blog/tokyo-food-guide.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "url": "https://digitalsaran.com/blog/budget-travel-europe.html"
+        }
+      ]
+    }
+  }
+  </script>
+</head>
+<body class="font-body text-slate-800 dark:text-slate-200 bg-sand-light dark:bg-midnight">
+  
+  <!-- Header (loaded via JavaScript) -->
+  <div id="header-container"></div>
+  
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-r from-forest to-ocean dark:from-midnight dark:to-ocean-dark overflow-hidden">
+    <div class="absolute inset-0 z-0 opacity-20">
+      <img src="assets/images/blog/blog-hero-bg.jpg" alt="" class="w-full h-full object-cover">
+    </div>
+    <div class="container mx-auto px-4 py-20 md:py-28 relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold font-display text-white mb-6">Travel Stories & Insights</h1>
+        <p class="text-xl text-white text-opacity-90 mb-8">Discover our collection of travel tales, tips, and guides from around the world</p>
+        
+        <!-- Search Bar -->
+        <div class="relative max-w-xl mx-auto">
+          <input 
+            type="text" 
+            id="blog-search" 
+            placeholder="Search articles..." 
+            class="w-full py-4 px-6 rounded-full bg-white bg-opacity-20 backdrop-blur-sm border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-75 focus:outline-none focus:ring-2 focus:ring-coral">
+          <button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-white p-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Blog Content Section -->
+  <section class="section-padding">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col lg:flex-row gap-8">
+        <!-- Sidebar -->
+        <div class="lg:w-1/4">
+          <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 sticky top-24">
+            <h2 class="text-xl font-bold mb-4 font-display">Categories</h2>
+            
+            <div class="space-y-2 mb-8">
+              <button class="category-filter w-full text-left py-2 px-3 rounded-md bg-forest bg-opacity-10 text-forest dark:bg-forest-dark dark:bg-opacity-20 dark:text-forest-light font-medium" data-category="all">All Categories</button>
+              <button class="category-filter w-full text-left py-2 px-3 rounded-md hover:bg-forest hover:bg-opacity-10 dark:hover:bg-forest-dark dark:hover:bg-opacity-20 transition-colors" data-category="destinations">Destinations</button>
+              <button class="category-filter w-full text-left py-2 px-3 rounded-md hover:bg-forest hover:bg-opacity-10 dark:hover:bg-forest-dark dark:hover:bg-opacity-20 transition-colors" data-category="tips">Travel Tips</button>
+              <button class="category-filter w-full text-left py-2 px-3 rounded-md hover:bg-forest hover:bg-opacity-10 dark:hover:bg-forest-dark dark:hover:bg-opacity-20 transition-colors" data-category="food">Food & Cuisine</button>
+              <button class="category-filter w-full text-left py-2 px-3 rounded-md hover:bg-forest hover:bg-opacity-10 dark:hover:bg-forest-dark dark:hover:bg-opacity-20 transition-colors" data-category="budget">Budget Travel</button>
+              <button class="category-filter w-full text-left py-2 px-3 rounded-md hover:bg-forest hover:bg-opacity-10 dark:hover:bg-forest-dark dark:hover:bg-opacity-20 transition-colors" data-category="photography">Photography</button>
+              <button class="category-filter w-full text-left py-2 px-3 rounded-md hover:bg-forest hover:bg-opacity-10 dark:hover:bg-forest-dark dark:hover:bg-opacity-20 transition-colors" data-category="adventure">Adventure</button>
+            </div>
+            
+            <h2 class="text-xl font-bold mb-4 font-display">Popular Tags</h2>
+            <div class="flex flex-wrap gap-2">
+              <a href="#" class="text-sm bg-sand dark:bg-gray-700 px-3 py-1 rounded-full hover:bg-sand-dark dark:hover:bg-gray-600 transition-colors">#Asia</a>
+              <a href="#" class="text-sm bg-sand dark:bg-gray-700 px-3 py-1 rounded-full hover:bg-sand-dark dark:hover:bg-gray-600 transition-colors">#Europe</a>
+              <a href="#" class="text-sm bg-sand dark:bg-gray-700 px-3 py-1 rounded-full hover:bg-sand-dark dark:hover:bg-gray-600 transition-colors">#Beaches</a>
+              <a href="#" class="text-sm bg-sand dark:bg-gray-700 px-3 py-1 rounded-full hover:bg-sand-dark dark:hover:bg-gray-600 transition-colors">#CityBreak</a>
+              <a href="#" class="text-sm bg-sand dark:bg-gray-700 px-3 py-1 rounded-full hover:bg-sand-dark dark:hover:bg-gray-600 transition-colors">#FoodTour</a>
+              <a href="#" class="text-sm bg-sand dark:bg-gray-700 px-3 py-1 rounded-full hover:bg-sand-dark dark:hover:bg-gray-600 transition-colors">#Hiking</a>
+              <a href="#" class="text-sm bg-sand dark:bg-gray-700 px-3 py-1 rounded-full hover:bg-sand-dark dark:hover:bg-gray-600 transition-colors">#SoloTravel</a>
+              <a href="#" class="text-sm bg-sand dark:bg-gray-700 px-3 py-1 rounded-full hover:bg-sand-dark dark:hover:bg-gray-600 transition-colors">#LuxuryTravel</a>
+              <a href="#" class="text-sm bg-sand dark:bg-gray-700 px-3 py-1 rounded-full hover:bg-sand-dark dark:hover:bg-gray-600 transition-colors">#BudgetTips</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="lg:w-3/4">
+          <!-- Featured Post -->
+          <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden mb-10">
+            <div class="relative aspect-w-16 aspect-h-9">
+              <img src="assets/images/blog/featured-post.jpg" alt="10 Hidden Gems in Bali You Need to Visit" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+              <div class="absolute bottom-0 left-0 p-6 text-white">
+                <span class="bg-coral text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Featured</span>
+                <h2 class="text-2xl md:text-3xl font-bold mt-2 mb-2">10 Hidden Gems in Bali You Need to Visit</h2>
+                <div class="flex items-center text-sm">
+                  <span class="mr-4">June 15, 2023</span>
+                  <span class="mr-4">By Digital Saran</span>
+                  <span>15 min read</span>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <p class="mb-4">Beyond the popular beaches and tourist hotspots, Bali hides some truly magical places that most travelers never discover. From secret waterfalls to hidden temples nestled in the jungle, these spots offer a glimpse into the authentic heart of the Island of Gods.</p>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                  <span class="text-sm bg-sand dark:bg-gray-700 px-3 py-1 rounded-full" data-category="destinations">Destinations</span>
+                  <span class="text-sm bg-sand dark:bg-gray-700 px-3 py-1 rounded-full" data-category="adventure">Adventure</span>
+                </div>
+                <a href="#" class="text-ocean dark:text-coral hover:underline font-medium">Read More</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Blog Posts Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="blog-posts-container">
+            <!-- Post 1 -->
+            <article class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1" data-category="food">
+              <a href="#" class="block">
+                <div class="relative aspect-w-16 aspect-h-9 overflow-hidden">
+                  <img src="assets/images/blog/post-1.jpg" alt="The Ultimate Tokyo Food Guide" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                </div>
+              </a>
+              <div class="p-6">
+                <div class="flex items-center text-xs text-slate-500 dark:text-slate-400 mb-2">
+                  <span class="mr-2">May 28, 2023</span>
+                  <span class="w-1 h-1 rounded-full bg-slate-500 dark:bg-slate-400 mr-2"></span>
+                  <span>12 min read</span>
+                </div>
+                <h3 class="text-xl font-bold mb-2"><a href="#" class="hover:text-ocean dark:hover:text-coral">The Ultimate Tokyo Food Guide: From Street Food to Michelin Stars</a></h3>
+                <p class="mb-4 text-slate-600 dark:text-slate-300">Discover the incredible culinary landscape of Tokyo, from hidden street food stalls to the city's finest dining establishments. This comprehensive guide will help you navigate Japan's food capital like a local.</p>
+                <div class="flex items-center justify-between">
+                  <span class="text-xs bg-sand dark:bg-gray-700 px-2 py-1 rounded-full">Food & Cuisine</span>
+                  <a href="#" class="text-ocean dark:text-coral hover:underline text-sm font-medium">Read More</a>
+                </div>
+              </div>
+            </article>
+            
+            <!-- Post 2 -->
+            <article class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1" data-category="budget">
+              <a href="#" class="block">
+                <div class="relative aspect-w-16 aspect-h-9 overflow-hidden">
+                  <img src="assets/images/blog/post-2.jpg" alt="How to Travel Europe on $50 a Day" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                </div>
+              </a>
+              <div class="p-6">
+                <div class="flex items-center text-xs text-slate-500 dark:text-slate-400 mb-2">
+                  <span class="mr-2">May 15, 2023</span>
+                  <span class="w-1 h-1 rounded-full bg-slate-500 dark:bg-slate-400 mr-2"></span>
+                  <span>10 min read</span>
+                </div>
+                <h3 class="text-xl font-bold mb-2"><a href="#" class="hover:text-ocean dark:hover:text-coral">How to Travel Europe on $50 a Day: The Ultimate Budget Guide</a></h3>
+                <p class="mb-4 text-slate-600 dark:text-slate-300">Think Europe is only for luxury travelers? Think again! This detailed guide breaks down how to experience the best of European culture, cuisine, and attractions while keeping your daily budget to just $50.</p>
+                <div class="flex items-center justify-between">
+                  <span class="text-xs bg-sand dark:bg-gray-700 px-2 py-1 rounded-full">Budget Travel</span>
+                  <a href="#" class="text-ocean dark:text-coral hover:underline text-sm font-medium">Read More</a>
+                </div>
+              </div>
+            </article>
+            
+            <!-- Post 3 -->
+            <article class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1" data-category="photography">
+              <a href="#" class="block">
+                <div class="relative aspect-w-16 aspect-h-9 overflow-hidden">
+                  <img src="assets/images/blog/post-3.jpg" alt="Mastering Travel Photography" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                </div>
+              </a>
+              <div class="p-6">
+                <div class="flex items-center text-xs text-slate-500 dark:text-slate-400 mb-2">
+                  <span class="mr-2">April 30, 2023</span>
+                  <span class="w-1 h-1 rounded-full bg-slate-500 dark:bg-slate-400 mr-2"></span>
+                  <span>8 min read</span>
+                </div>
+                <h3 class="text-xl font-bold mb-2"><a href="#" class="hover:text-ocean dark:hover:text-coral">Mastering Travel Photography: Essential Tips for Stunning Images</a></h3>
+                <p class="mb-4 text-slate-600 dark:text-slate-300">Learn how to capture breathtaking travel photos that tell a story and stand out on social media. This guide covers equipment recommendations, composition techniques, and editing tips for both beginners and advanced photographers.</p>
+                <div class="flex items-center justify-between">
+                  <span class="text-xs bg-sand dark:bg-gray-700 px-2 py-1 rounded-full">Photography</span>
+                  <a href="#" class="text-ocean dark:text-coral hover:underline text-sm font-medium">Read More</a>
+                </div>
+              </div>
+            </article>
+            
+            <!-- Post 4 -->
+            <article class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1" data-category="tips">
+              <a href="#" class="block">
+                <div class="relative aspect-w-16 aspect-h-9 overflow-hidden">
+                  <img src="assets/images/blog/post-4.jpg" alt="Solo Female Travel Safety Tips" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                </div>
+              </a>
+              <div class="p-6">
+                <div class="flex items-center text-xs text-slate-500 dark:text-slate-400 mb-2">
+                  <span class="mr-2">April 18, 2023</span>
+                  <span class="w-1 h-1 rounded-full bg-slate-500 dark:bg-slate-400 mr-2"></span>
+                  <span>11 min read</span>
+                </div>
+                <h3 class="text-xl font-bold mb-2"><a href="#" class="hover:text-ocean dark:hover:text-coral">Solo Female Travel Safety Tips: Empowering Adventures Worldwide</a></h3>
+                <p class="mb-4 text-slate-600 dark:text-slate-300">Practical advice for women traveling alone, from pre-trip preparation to on-the-ground safety strategies. These tips will help you confidently explore the world while minimizing risks and maximizing enjoyment.</p>
+                <div class="flex items-center justify-between">
+                  <span class="text-xs bg-sand dark:bg-gray-700 px-2 py-1 rounded-full">Travel Tips</span>
+                  <a href="#" class="text-ocean dark:text-coral hover:underline text-sm font-medium">Read More</a>
+                </div>
+              </div>
+            </article>
+            
+            <!-- Post 5 -->
+            <article class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1" data-category="destinations">
+              <a href="#" class="block">
+                <div class="relative aspect-w-16 aspect-h-9 overflow-hidden">
+                  <img src="assets/images/blog/post-5.jpg" alt="Santorini's Secret Spots" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                </div>
+              </a>
+              <div class="p-6">
+                <div class="flex items-center text-xs text-slate-500 dark:text-slate-400 mb-2">
+                  <span class="mr-2">April 5, 2023</span>
+                  <span class="w-1 h-1 rounded-full bg-slate-500 dark:bg-slate-400 mr-2"></span>
+                  <span>9 min read</span>
+                </div>
+                <h3 class="text-xl font-bold mb-2"><a href="#" class="hover:text-ocean dark:hover:text-coral">Santorini's Secret Spots: Beyond the Blue Domes</a></h3>
+                <p class="mb-4 text-slate-600 dark:text-slate-300">Escape the crowds and discover the authentic side of Greece's most famous island. This insider's guide reveals lesser-known beaches, villages, and viewpoints that offer the true Santorini experience without the Instagram crowds.</p>
+                <div class="flex items-center justify-between">
+                  <span class="text-xs bg-sand dark:bg-gray-700 px-2 py-1 rounded-full">Destinations</span>
+                  <a href="#" class="text-ocean dark:text-coral hover:underline text-sm font-medium">Read More</a>
+                </div>
+              </div>
+            </article>
+            
+            <!-- Post 6 -->
+            <article class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1" data-category="adventure">
+              <a href="#" class="block">
+                <div class="relative aspect-w-16 aspect-h-9 overflow-hidden">
+                  <img src="assets/images/blog/post-6.jpg" alt="Trekking the Inca Trail" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                </div>
+              </a>
+              <div class="p-6">
+                <div class="flex items-center text-xs text-slate-500 dark:text-slate-400 mb-2">
+                  <span class="mr-2">March 22, 2023</span>
+                  <span class="w-1 h-1 rounded-full bg-slate-500 dark:bg-slate-400 mr-2"></span>
+                  <span>14 min read</span>
+                </div>
+                <h3 class="text-xl font-bold mb-2"><a href="#" class="hover:text-ocean dark:hover:text-coral">Trekking the Inca Trail: A Day-by-Day Journey to Machu Picchu</a></h3>
+                <p class="mb-4 text-slate-600 dark:text-slate-300">A comprehensive guide to one of the world's most famous treks. From permit applications to packing essentials and altitude acclimatization, this article covers everything you need to know for a successful Inca Trail adventure.</p>
+                <div class="flex items-center justify-between">
+                  <span class="text-xs bg-sand dark:bg-gray-700 px-2 py-1 rounded-full">Adventure</span>
+                  <a href="#" class="text-ocean dark:text-coral hover:underline text-sm font-medium">Read More</a>
+                </div>
+              </div>
+            </article>
+          </div>
+          
+          <!-- Pagination -->
+          <div class="mt-12 flex justify-center">
+            <nav class="inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
+              <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm font-medium text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700">
+                <span class="sr-only">Previous</span>
+                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </a>
+              <a href="#" aria-current="page" class="relative inline-flex items-center px-4 py-2 border border-forest bg-forest bg-opacity-10 text-sm font-medium text-forest dark:border-coral dark:bg-coral dark:bg-opacity-10 dark:text-coral">1</a>
+              <a href="#" class="relative inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700">2</a>
+              <a href="#" class="relative inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700">3</a>
+              <span class="relative inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm font-medium text-gray-700 dark:text-gray-200">...</span>
+              <a href="#" class="relative inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700">8</a>
+              <a href="#" class="relative inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700">9</a>
+              <a href="#" class="relative inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700">10</a>
+              <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm font-medium text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700">
+                <span class="sr-only">Next</span>
+                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                </svg>
+              </a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Newsletter Section -->
+  <section class="bg-forest dark:bg-forest-dark text-white py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-bold font-display mb-4">Never Miss a Story</h2>
+        <p class="text-lg mb-8 text-white text-opacity-90">Subscribe to our newsletter and get exclusive travel tips, destination guides, and special offers delivered straight to your inbox.</p>
+        
+        <form id="newsletter-form" class="max-w-md mx-auto">
+          <div class="flex flex-col sm:flex-row gap-4">
+            <input 
+              type="email" 
+              id="newsletter-email" 
+              placeholder="Your email address" 
+              class="flex-grow px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-75 focus:outline-none focus:ring-2 focus:ring-coral">
+            <button type="submit" class="btn-coral px-6 py-3 rounded-lg font-bold">Subscribe</button>
+          </div>
+          <p class="text-sm mt-3 text-white text-opacity-80">We respect your privacy. Unsubscribe at any time.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer (loaded via JavaScript) -->
+  <div id="footer-container"></div>
+  
+  <!-- JavaScript -->
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Load header and footer
+      loadComponent('header-container', 'components/header.html');
+      loadComponent('footer-container', 'components/footer.html');
+      
+      // Blog search functionality
+      const blogSearch = document.getElementById('blog-search');
+      const blogPosts = document.querySelectorAll('#blog-posts-container article');
+      
+      blogSearch.addEventListener('input', function() {
+        const searchTerm = this.value.toLowerCase();
+        
+        blogPosts.forEach(post => {
+          const title = post.querySelector('h3').textContent.toLowerCase();
+          const content = post.querySelector('p').textContent.toLowerCase();
+          
+          if (title.includes(searchTerm) || content.includes(searchTerm)) {
+            post.style.display = 'block';
+          } else {
+            post.style.display = 'none';
+          }
+        });
+      });
+      
+      // Category filtering
+      const categoryFilters = document.querySelectorAll('.category-filter');
+      
+      categoryFilters.forEach(filter => {
+        filter.addEventListener('click', function() {
+          const category = this.getAttribute('data-category');
+          
+          // Update active filter styling
+          categoryFilters.forEach(btn => {
+            btn.classList.remove('bg-forest', 'bg-opacity-10', 'text-forest', 'dark:bg-forest-dark', 'dark:bg-opacity-20', 'dark:text-forest-light');
+            btn.classList.add('hover:bg-forest', 'hover:bg-opacity-10', 'dark:hover:bg-forest-dark', 'dark:hover:bg-opacity-20');
+          });
+          
+          this.classList.add('bg-forest', 'bg-opacity-10', 'text-forest', 'dark:bg-forest-dark', 'dark:bg-opacity-20', 'dark:text-forest-light');
+          this.classList.remove('hover:bg-forest', 'hover:bg-opacity-10', 'dark:hover:bg-forest-dark', 'dark:hover:bg-opacity-20');
+          
+          // Filter posts
+          blogPosts.forEach(post => {
+            if (category === 'all') {
+              post.style.display = 'block';
+            } else if (post.getAttribute('data-category') === category) {
+              post.style.display = 'block';
+            } else {
+              post.style.display = 'none';
+            }
+          });
+        });
+      });
+      
+      // Newsletter form validation
+      const newsletterForm = document.getElementById('newsletter-form');
+      const newsletterEmail = document.getElementById('newsletter-email');
+      
+      newsletterForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const email = newsletterEmail.value.trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+        if (!emailRegex.test(email)) {
+          alert('Please enter a valid email address');
+          return;
+        }
+        
+        // Simulate form submission
+        alert('Thank you for subscribing! Check your email for confirmation.');
+        newsletterForm.reset();
+      });
+    });
+  </script>
+</body>
+</html>

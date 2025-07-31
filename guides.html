@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Comprehensive travel guides with detailed itineraries, local tips, cost estimates, and insider advice for destinations around the world.">
+  <title>Travel Guides | Digital Saran Travel Blog</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  
+  <!-- Schema.org markup for Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Travel Guides",
+    "description": "Comprehensive travel guides with detailed itineraries, local tips, cost estimates, and insider advice for destinations around the world.",
+    "url": "https://digitalsaran.com/guides.html",
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "url": "https://digitalsaran.com/guides/japan-two-week-itinerary.html",
+          "name": "Japan: The Perfect Two-Week Itinerary"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "url": "https://digitalsaran.com/guides/bali-on-a-budget.html",
+          "name": "Bali on a Budget: Complete Travel Guide"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "url": "https://digitalsaran.com/guides/morocco-desert-adventure.html",
+          "name": "Morocco Desert Adventure: Ultimate Guide"
+        }
+      ]
+    }
+  }
+  </script>
+</head>
+<body class="font-sans text-gray-800 bg-white dark:bg-midnight dark:text-gray-200">
+  
+  <!-- Header (included from components) -->
+  <div id="header-container"></div>
+  
+  <!-- Hero Section -->
+  <section class="relative h-80 bg-cover bg-center" style="background-image: url('assets/images/guides-hero.jpg');">
+    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+    <div class="container mx-auto px-4 h-full flex items-center justify-center relative z-10">
+      <div class="text-center">
+        <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-6 text-shadow-lg">Travel Guides</h1>
+        <p class="text-white text-xl md:text-2xl text-shadow">In-depth guides to help you plan your perfect trip</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Guide Filters -->
+  <section class="py-8 bg-sand bg-opacity-20 dark:bg-gray-900">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+        <!-- Search Box -->
+        <div class="w-full md:w-1/3">
+          <div class="relative">
+            <input type="text" id="guide-search" placeholder="Search guides..." class="form-input pl-10 w-full">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 absolute left-3 top-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
+        </div>
+        
+        <!-- Filter Dropdowns -->
+        <div class="flex flex-wrap justify-end gap-4">
+          <select id="city-filter" class="form-select">
+            <option value="">All Cities</option>
+            <option value="tokyo">Tokyo</option>
+            <option value="kyoto">Kyoto</option>
+            <option value="bali">Bali</option>
+            <option value="marrakech">Marrakech</option>
+            <option value="rome">Rome</option>
+            <option value="paris">Paris</option>
+            <option value="new-york">New York</option>
+          </select>
+          
+          <select id="adventure-filter" class="form-select">
+            <option value="">All Adventures</option>
+            <option value="hiking">Hiking</option>
+            <option value="beach">Beach</option>
+            <option value="safari">Safari</option>
+            <option value="city-break">City Break</option>
+            <option value="road-trip">Road Trip</option>
+            <option value="winter">Winter</option>
+          </select>
+          
+          <select id="budget-filter" class="form-select">
+            <option value="">All Budgets</option>
+            <option value="budget">Budget ($)</option>
+            <option value="mid-range">Mid-Range ($$)</option>
+            <option value="luxury">Luxury ($$$)</option>
+          </select>
+          
+          <select id="food-filter" class="form-select">
+            <option value="">All Cuisines</option>
+            <option value="japanese">Japanese</option>
+            <option value="italian">Italian</option>
+            <option value="thai">Thai</option>
+            <option value="moroccan">Moroccan</option>
+            <option value="french">French</option>
+            <option value="american">American</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Featured Guides -->
+  <section class="section-padding bg-white dark:bg-midnight">
+    <div class="container mx-auto px-4">
+      <h2 class="mb-8">Featured Guides</h2>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+        <!-- Featured Guide 1 -->
+        <div class="guide-card featured" data-city="tokyo,kyoto" data-adventure="city-break" data-budget="mid-range" data-food="japanese">
+          <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1 flex flex-col h-full">
+            <a href="guides/japan-two-week-itinerary.html" class="block">
+              <div class="relative aspect-w-16 aspect-h-9 overflow-hidden">
+                <img src="assets/images/guides/japan-itinerary.jpg" alt="Fushimi Inari Shrine in Kyoto, Japan" class="object-cover w-full h-full transform transition-transform duration-500 hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+                <div class="absolute top-4 left-4">
+                  <span class="bg-coral text-white text-xs px-3 py-1 rounded-full uppercase font-bold">Featured</span>
+                </div>
+              </div>
+            </a>
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="mb-4">
+                <div class="flex flex-wrap gap-2 mb-3">
+                  <span class="text-xs bg-sand bg-opacity-20 dark:bg-gray-700 px-2 py-1 rounded-full">Japan</span>
+                  <span class="text-xs bg-sand bg-opacity-20 dark:bg-gray-700 px-2 py-1 rounded-full">14 Days</span>
+                  <span class="text-xs bg-sand bg-opacity-20 dark:bg-gray-700 px-2 py-1 rounded-full">Mid-Range</span>
+                </div>
+                <h3 class="text-2xl font-bold font-display mb-2"><a href="guides/japan-two-week-itinerary.html" class="hover:text-ocean dark:hover:text-coral">Japan: The Perfect Two-Week Itinerary</a></h3>
+                <p class="text-gray-700 dark:text-gray-300">Experience the best of Japan with this comprehensive two-week itinerary covering Tokyo, Kyoto, Osaka, Hiroshima, and more. From ancient temples to futuristic cityscapes.</p>
+              </div>
+              
+              <div class="mt-auto pt-4 border-t border-gray-200 dark:border-gray-700">
+                <div class="flex justify-between items-center">
+                  <div class="flex items-center">
+                    <div class="text-forest dark:text-coral mr-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <span class="text-sm">Reading time: 15 min</span>
+                  </div>
+                  <div class="flex items-center">
+                    <div class="text-forest dark:text-coral mr-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
+                    </div>
+                    <span class="text-sm">5.2K views</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Featured Guide 2 -->
+        <div class="guide-card featured" data-city="bali" data-adventure="beach" data-budget="budget" data-food="thai">
+          <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1 flex flex-col h-full">
+            <a href="guides/bali-on-a-budget.html" class="block">
+              <div class="relative aspect-w-16 aspect-h-9 overflow-hidden">
+                <img src="assets/images/guides/bali-budget.jpg" alt="Rice terraces in Bali, Indonesia" class="object-cover w-full h-full transform transition-transform duration-500 hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+                <div class="absolute top-4 left-4">
+                  <span class="bg-coral text-white text-xs px-3 py-1 rounded-full uppercase font-bold">Featured</span>
+                </div>
+              </div>
+            </a>
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="mb-4">
+                <div class="flex flex-wrap gap-2 mb-3">
+                  <span class="text-xs bg-sand bg-opacity-20 dark:bg-gray-700 px-2 py-1 rounded-full">Indonesia</span>
+                  <span class="text-xs bg-sand bg-opacity-20 dark:bg-gray-700 px-2 py-1 rounded-full">10 Days</span>
+                  <span class="text-xs bg-sand bg-opacity-20 dark:bg-gray-700 px-2 py-1 rounded-full">Budget</span>
+                </div>
+                <h3 class="text-2xl font-bold font-display mb-2"><a href="guides/bali-on-a-budget.html" class="hover:text-ocean dark:hover:text-coral">Bali on a Budget: Complete Travel Guide</a></h3>
+                <p class="text-gray-700 dark:text-gray-300">Experience the magic of Bali without breaking the bank. This comprehensive guide covers affordable accommodation, cheap eats, free activities, and transportation tips.</p>
+              </div>
+              
+              <div class="mt-auto pt-4 border-t border-gray-200 dark:border-gray-700">
+                <div class="flex justify-between items-center">
+                  <div class="flex items-center">
+                    <div class="text-forest dark:text-coral mr-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <span class="text-sm">Reading time: 12 min</span>
+                  </div>
+                  <div class="flex items-center">
+                    <div class="text-forest dark:text-coral mr-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
+                    </div>
+                    <span class="text-sm">4.8K views</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <h2 class="mb-8">All Travel Guides</h2>
+      
+      <div id="guide-count" class="mb-8 text-lg font-medium">Showing all 9 guides</div>
+      
+      <div id="guide-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Guide 1 -->
+        <div class="guide-card" data-city="marrakech" data-adventure="safari" data-budget="mid-range" data-food="moroccan">
+          <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1 flex flex-col h-full">
+            <a href="guides/morocco-desert-adventure.html" class="block">
+              <div class="relative aspect-w-16 aspect-h-9 overflow-hidden">
+                <img src="assets/images/guides/morocco-desert.jpg" alt="Sahara Desert in Morocco" class="object-cover w-full h-full transform transition-transform duration-500 hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+              </div>
+            </a>
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="mb-4">
+                <div class="flex flex-wrap gap-2 mb-3">
+                  <span class="text-xs bg-sand bg-opacity-20 dark:bg-gray-700 px-2 py-1 rounded-full">Morocco</span>
+                  <span class="text-xs bg-sand bg-opacity-20 dark:bg-gray-700 px-2 py-1 rounded-full">7 Days</span>
+                  <span class="text-xs bg-sand bg-opacity-20 dark:bg-gray-700 px-2 py-1 rounded-full">Mid-Range</span>
+                </div>
+                <h3 class="text-xl font-bold font-display mb-2"><a href="guides/morocco-desert-adventure.html" class="hover:text-ocean dark:hover:text-coral">Morocco Desert Adventure: Ultimate Guide</a></h3>
+                <p class="text-gray-700 dark:text-gray-300">From Marrakech to the Sahara, experience the magic of Morocco's desert landscapes, ancient kasbahs, and Berber culture.</p>
+              </div>
+              
+              <div class="mt-auto pt-4 border-t border-gray-200 dark:border-gray-700">
+                <div class="flex justify-between items-center">
+                  <div class="flex items-center">
+                    <div class="text-forest dark:text-coral mr-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <span class="text-sm">Reading time: 10 min</span>
+                  </div>
+                  <div class="flex items-center">
+                    <div class="text-forest dark:text-coral mr-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
+                    </div>
+                    <span class="text-sm">3.5K views</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Guide 2 -->
+        <div class="guide-card" data-city="rome" data-adventure="city-break" data-budget="mid-range" data-food="italian">
+          <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1 flex flex-col h-full">
+            <a href="guides/rome-weekend-guide.html" class="block">
+              <div class="relative aspect-w-16 aspect-h-9 overflow-hidden">
+                <img src="assets/images/guides/rome-weekend.jpg" alt="Colosseum in Rome, Italy" class="object-cover w-full h-full transform transition-transform duration-500 hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+              </div>
+            </a>
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="mb-4">
+                <div class="flex flex-wrap gap-2 mb-3">
+                  <span class="text-xs bg-sand bg-opacity-20 dark:bg-gray-700 px-2 py-1 rounded-full">Italy</span>
+                  <span class="text-xs bg-sand bg-opacity-20 dark:bg-gray-700 px-2 py-1 rounded-full">3 Days</span>
+                  <span class="text-xs bg-sand bg-opacity-20 dark:bg-gray-700 px-2 py-1 rounded-full">Mid-Range</span>
+                </div>
+                <h3 class="text-xl font-bold font-display mb-2"><a href="guides/rome-weekend-guide.html" class="hover:text-ocean dark:hover:text-coral">Rome in a Weekend: Essential Guide</a></h3>
+                <p class="text-gray-700 dark:text-gray-300">Make the most of a short trip to the Eternal City with this efficient itinerary covering the Vatican, Colosseum, and best local food spots.</p>
+              </div>
+              
+              <div class="mt-auto pt-4 border-t border-gray-200 dark:border-gray-700">
+                <div class="flex justify-between items-center">
+                  <div class="flex items-center">
+                    <div class="text-forest dark:text-coral mr-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <span class="text-sm">Reading time: 8 min</span>
+                  </div>
+                  <div class="flex items-center">
+                    <div class="text-forest dark:text-coral mr-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
+                    </div>
+                    <span class="text-sm">3.2K views</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Guide 3 -->
+        <div class="guide-card" data-city="new-york" data-adventure="city-break" data-budget="luxury" data-food="american">
+          <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1 flex flex-col h-full">
+            <a href="guides/new-york-luxury-weekend.html" class="block">
+              <div class="relative aspect-w-16 aspect-h-9 overflow-hidden">
+                <img src="assets/images/guides/new-york-luxury.jpg" alt="New York City skyline" class="object-cover w-full h-full transform transition-transform duration-500 hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+              </div>
+            </a>
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="mb-4">
+                <div class="flex flex-wrap gap-2 mb-3">
+                  <span class="text-xs bg-sand bg-opacity-20 dark:bg-gray-700 px-2 py-1 rounded-full">USA</span>
+                  <span class="text-xs bg-sand bg-opacity-20 dark:bg-gray-700 px-2 py-1 rounded-full">4 Days</span>
+                  <span class="text-xs bg-sand bg-opacity-20 dark:bg-gray-700 px-2 py-1 rounded-full">Luxury</span>
+                </div>
+                <h3 class="text-xl font-bold font-display mb-2"><a href="guides/new-york-luxury-weekend.html" class="hover:text-ocean dark:hover:text-coral">New York: Luxury Weekend Getaway</a></h3>
+                <p class="text-gray-700 dark:text-gray-300">Experience the best of NYC in style with this luxury guide featuring 5-star hotels, Michelin-starred restaurants, and exclusive experiences.</p>
+              </div>
+              
+              <div class="mt-auto pt-4 border-t border-gray-200 dark:border-gray-700">
+                <div class="flex justify-between items-center">
+                  <div class="flex items-center">
+                    <div class="text-forest dark:text-coral mr-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <span class="text-sm">Reading time: 9 min</span>
+                  </div>
+                  <div class="flex items-center">
+                    <div class="text-forest dark:text-coral mr-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
+                    </div>
+                    <span class="text-sm">2.9K views</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Guide 4 -->
+        <div class="guide-card" data-city="paris" data-adventure="city-break" data-budget="mid-range" data-food="french">
+          <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1 flex flex-col h-full">
+            <a href="guides/paris-first-time-visitors.html" class="block">
+              <div class="relative aspect-w-16 aspect-h-9 overflow-hidden">
+                <img src="assets/images/guides/paris-first-time.jpg" alt="Eiffel Tower in Paris, France" class="object-cover w-full h-full transform transition-transform duration-500 hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+              </div>
+            </a>
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="mb-4">
+                <div class="flex flex-wrap gap-2 mb-3">
+                  <span class="text-xs bg-sand bg-opacity-20 dark:bg-gray-700 px-2 py-1 rounded-full">France</span>
+                  <span class="text-xs bg-sand bg-opacity-20 dark:bg-gray-700 px-2 py-1 rounded-full">5 Days</span>
+                  <span class="text-xs bg-sand bg-opacity-20 dark:bg-gray-700 px-2 py-1 rounded-full">Mid-Range</span>
+                </div>
+                <h3 class="text-xl font-bold font-display mb-2"><a href="guides/paris-first-time-visitors.html" class="hover:text-ocean dark:hover:text-coral">Paris for First-Time Visitors</a></h3>
+                <p class="text-gray-700 dark:text-gray-300">Everything you need to know for your first trip to Paris, including must-see attractions, local neighborhoods, and how to avoid tourist traps.</p>
+              </div>
+              
+              <div class="mt-auto pt-4 border-t border-gray-200 dark:border-gray-700">
+                <div class="flex justify-between items-center">
+                  <div class="flex items-center">
+                    <div class="text-forest dark:text-coral mr-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <span class="text-sm">Reading time: 11 min</span>
+                  </div>
+                  <div class="flex items-center">
+                    <div class="text-forest dark:text-coral mr-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
+                    </div>
+                    <span class="text-sm">3.7K views</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Guide 5 -->
+        <div class="guide-card" data-city="kyoto" data-adventure="cultural" data-budget="mid-range" data-food="japanese">
+          <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1 flex flex-col h-full">
+            <a href="guides/kyoto-temples-guide.html" class="block">
+              <div class="relative aspect-w-16 aspect-h-9 overflow-hidden">
+                <img src="assets/images/guides/kyoto-temples.jpg" alt="Kinkaku-ji Temple in Kyoto, Japan" class="object-cover w-full h-full transform transition-transform duration-500 hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+              </div>
+            </a>
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="mb-4">
+                <div class="flex flex-wrap gap-2 mb-3">
+                  <span class="text-xs bg-sand bg-opacity-20 dark:bg-gray-700 px-2 py-1 rounded-full">Japan</span>
+                  <span class="text-xs bg-sand bg-opacity-20 dark:bg-gray-700 px-2 py-1 rounded-full">3 Days</span>
+                  <span class="text-xs bg-sand bg-opacity-20 dark:bg-gray-700 px-2 py-1 rounded-full">Cultural</span>
+                </div>
+                <h3 class="text-xl font-bold font-display mb-2"><a href="guides/kyoto-temples-guide.html" class="hover:text-ocean dark:hover:text-coral">Kyoto's Most Beautiful Temples & Shrines</a></h3>
+                <p class="text-gray-700 dark:text-gray-300">Discover the spiritual heart of Japan with this guide to Kyoto's most stunning temples, shrines, and gardens, including visiting tips and cultural insights.</p>
+              </div>
+              
+              <div class="mt-auto pt-4 border-t border-gray-200 dark:border-gray-700">
+                <div class="flex justify-between items-center">
+                  <div class="flex items-center">
+                    <div class="text-forest dark:text-coral mr-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <span class="text-sm">Reading time: 10 min</span>
+                  </div>
+                  <div class="flex items-center">
+                    <div class="text-forest dark:text-coral mr-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
+                    </div>
+                    <span class="text-sm">2.8K views</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Guide 6 -->
+        <div class="guide-card" data-city="bali" data-adventure="adventure" data-budget="budget" data-food="thai">
+          <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1 flex flex-col h-full">
+            <a href="guides/bali-hidden-waterfalls.html" class="block">
+              <div class="relative aspect-w-16 aspect-h-9 overflow-hidden">
+                <img src="assets/images/guides/bali-waterfalls.jpg" alt="Hidden waterfall in Bali, Indonesia" class="object-cover w-full h-full transform transition-transform duration-500 hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+              </div>
+            </a>
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="mb-4">
+                <div class="flex flex-wrap gap-2 mb-3">
+                  <span class="text-xs bg-sand bg-opacity-20 dark:bg-gray-700 px-2 py-1 rounded-full">Indonesia</span>
+                  <span class="text-xs bg-sand bg-opacity-20 dark:bg-gray-700 px-2 py-1 rounded-full">2 Days</span>
+                  <span class="text-xs bg-sand bg-opacity-20 dark:bg-gray-700 px-2 py-1 rounded-full">Adventure</span>
+                </div>
+                <h3 class="text-xl font-bold font-display mb-2"><a href="guides/bali-hidden-waterfalls.html" class="hover:text-ocean dark:hover:text-coral">Bali's Hidden Waterfalls: Off the Beaten Path</a></h3>
+                <p class="text-gray-700 dark:text-gray-300">Escape the crowds and discover Bali's most beautiful secret waterfalls with this adventure guide, including hiking directions and photography tips.</p>
+              </div>
+              
+              <div class="mt-auto pt-4 border-t border-gray-200 dark:border-gray-700">
+                <div class="flex justify-between items-center">
+                  <div class="flex items-center">
+                    <div class="text-forest dark:text-coral mr-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <span class="text-sm">Reading time: 8 min</span>
+                  </div>
+                  <div class="flex items-center">
+                    <div class="text-forest dark:text-coral mr-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
+                    </div>
+                    <span class="text-sm">2.5K views</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- More guide cards can be added here -->
+      </div>
+      
+      <!-- Load More Button -->
+      <div class="text-center mt-12">
+        <button id="load-more" class="btn-primary">Load More Guides</button>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Guide Features Section -->
+  <section class="section-padding bg-sand bg-opacity-20 dark:bg-gray-900">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="mb-4">What Makes Our Guides Special</h2>
+        <p class="text-lg max-w-3xl mx-auto">Each travel guide is carefully crafted to provide you with the most comprehensive and authentic information.</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Feature 1 -->
+        <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md text-center">
+          <div class="text-forest dark:text-coral text-4xl mb-4 mx-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Detailed Itineraries</h3>
+          <p class="text-gray-700 dark:text-gray-300">Day-by-day plans with realistic timelines, transportation details, and alternative options.</p>
+        </div>
+        
+        <!-- Feature 2 -->
+        <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md text-center">
+          <div class="text-forest dark:text-coral text-4xl mb-4 mx-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Cost Estimates</h3>
+          <p class="text-gray-700 dark:text-gray-300">Transparent budget breakdowns for accommodation, food, activities, and transportation at different price points.</p>
+        </div>
+        
+        <!-- Feature 3 -->
+        <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md text-center">
+          <div class="text-forest dark:text-coral text-4xl mb-4 mx-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Best Time to Visit</h3>
+          <p class="text-gray-700 dark:text-gray-300">Seasonal information with weather patterns, crowd levels, and special events to help you plan the perfect trip timing.</p>
+        </div>
+        
+        <!-- Feature 4 -->
+        <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md text-center">
+          <div class="text-forest dark:text-coral text-4xl mb-4 mx-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Local Tips</h3>
+          <p class="text-gray-700 dark:text-gray-300">Insider advice from personal experience and local connections to help you avoid tourist traps and discover authentic experiences.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Newsletter Section -->
+  <section class="section-padding bg-forest text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-sand mb-6">Get New Guides in Your Inbox</h2>
+        <p class="text-lg mb-8">Subscribe to receive notifications when new travel guides are published, plus exclusive travel tips and special offers.</p>
+        
+        <form id="newsletter-form" class="flex flex-col md:flex-row gap-4">
+          <input type="email" placeholder="Your email address" class="form-input flex-grow" required>
+          <button type="submit" class="btn-secondary border-sand text-sand hover:bg-sand hover:text-forest">Subscribe</button>
+        </form>
+        <p class="text-sm mt-4 text-sand text-opacity-80">I respect your privacy. Unsubscribe at any time.</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer (included from components) -->
+  <div id="footer-container"></div>
+  
+  <!-- JavaScript -->
+  <script src="assets/js/main.js"></script>
+  
+  <!-- Component Loader Script -->
+  <script>
+    // Load header and footer components
+    document.addEventListener('DOMContentLoaded', () => {
+      // Load header
+      fetch('components/header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('header-container').innerHTML = data;
+          // Initialize navigation after header is loaded
+          if (typeof initNavigation === 'function') {
+            initNavigation();
+          }
+          if (typeof initDarkMode === 'function') {
+            initDarkMode();
+          }
+        });
+      
+      // Load footer
+      fetch('components/footer.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('footer-container').innerHTML = data;
+        });
+      
+      // Initialize guide filtering
+      initGuideFilters();
+    });
+    
+    // Guide filtering functionality
+    function initGuideFilters() {
+      const searchInput = document.getElementById('guide-search');
+      const cityFilter = document.getElementById('city-filter');
+      const adventureFilter = document.getElementById('adventure-filter');
+      const budgetFilter = document.getElementById('budget-filter');
+      const foodFilter = document.getElementById('food-filter');
+      const guideCards = document.querySelectorAll('.guide-card');
+      const guideCount = document.getElementById('guide-count');
+      const loadMoreBtn = document.getElementById('load-more');
+      
+      // Initial count
+      updateGuideCount();
+      
+      // Search input event
+      searchInput.addEventListener('input', filterGuides);
+      
+      // Filter dropdown events
+      cityFilter.addEventListener('change', filterGuides);
+      adventureFilter.addEventListener('change', filterGuides);
+      budgetFilter.addEventListener('change', filterGuides);
+      foodFilter.addEventListener('change', filterGuides);
+      
+      // Load more button (for demonstration)
+      loadMoreBtn.addEventListener('click', () => {
+        alert('In a real implementation, this would load more guides from the server.');
+      });
+      
+      function filterGuides() {
+        const searchTerm = searchInput.value.toLowerCase();
+        const cityValue = cityFilter.value;
+        const adventureValue = adventureFilter.value;
+        const budgetValue = budgetFilter.value;
+        const foodValue = foodFilter.value;
+        
+        let visibleCount = 0;
+        
+        guideCards.forEach(card => {
+          const cardTitle = card.querySelector('h3').textContent.toLowerCase();
+          const cardDescription = card.querySelector('p').textContent.toLowerCase();
+          const cardCities = card.dataset.city ? card.dataset.city.split(',') : [];
+          const cardAdventures = card.dataset.adventure ? card.dataset.adventure.split(',') : [];
+          const cardBudget = card.dataset.budget;
+          const cardFoods = card.dataset.food ? card.dataset.food.split(',') : [];
+          
+          // Check if card matches all filters
+          const matchesSearch = cardTitle.includes(searchTerm) || cardDescription.includes(searchTerm);
+          const matchesCity = cityValue === '' || cardCities.includes(cityValue);
+          const matchesAdventure = adventureValue === '' || cardAdventures.includes(adventureValue);
+          const matchesBudget = budgetValue === '' || cardBudget === budgetValue;
+          const matchesFood = foodValue === '' || cardFoods.includes(foodValue);
+          
+          // Show/hide card based on filter matches
+          if (matchesSearch && matchesCity && matchesAdventure && matchesBudget && matchesFood) {
+            card.classList.remove('hidden');
+            visibleCount++;
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+        
+        updateGuideCount(visibleCount);
+      }
+      
+      function updateGuideCount(count) {
+        const totalCount = guideCards.length;
+        const visibleCount = count !== undefined ? count : totalCount;
+        
+        if (visibleCount === totalCount) {
+          guideCount.textContent = `Showing all ${totalCount} guides`;
+        } else {
+          guideCount.textContent = `Showing ${visibleCount} of ${totalCount} guides`;
+        }
+      }
+    }
+  </script>
+</body>
+</html>
